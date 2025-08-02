@@ -21,7 +21,7 @@ const QuesAnswerPage = () => {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/polls');
+      const res = await axios.get('https://polling-backend-xr61.onrender.com/polls');
       setPollHistory(res.data);
       setShowHistory((prev) => !prev);
     } catch (err) {
@@ -34,7 +34,7 @@ const QuesAnswerPage = () => {
     if (!confirmClear) return;
 
     try {
-      await axios.delete('http://localhost:4000/polls');
+      await axios.delete('https://polling-backend-xr61.onrender.com/polls');
       setPollHistory([]); // Clear from UI too
       alert('✅ All poll history deleted');
     } catch (err) {
@@ -54,7 +54,7 @@ const QuesAnswerPage = () => {
         {showHistory && (
           <button
             onClick={clearPollHistory}
-            className="rounded-full border-2 w-52 p-2 text-[18px] text-[#4F0DCE]m-2 flex-col border-[#5767D0] ">
+            className="rounded-full border-2 w-52 p-2 text-[18px] text-[#4F0DCE]m-2  border-[#5767D0] ">
             Delete History
           </button>
         )}

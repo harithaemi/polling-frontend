@@ -1,6 +1,6 @@
 // src/socket.js
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:4000"); // Adjust if your backend runs elsewhere
+const socket = io("https://polling-backend-xr61.onrender.com");
 
 export default socket;
